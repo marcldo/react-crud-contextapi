@@ -3,11 +3,13 @@ import { Home } from "./components/Home";
 import { AddUser } from "./components/AddUser";
 import { EditUser } from "./components/EditUser";
 
+import "./App.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

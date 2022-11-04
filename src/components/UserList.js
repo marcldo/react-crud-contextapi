@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ListGroup, ListGroupItem, Button } from "reactstrap";
 
 export const UserList = () => {
-  const { users } = useContext(GlobalContext);
+  const { users, removeUser } = useContext(GlobalContext);
   return (
     <ListGroup className="mt-4">
       {users.map((user) => (
@@ -15,7 +15,12 @@ export const UserList = () => {
             <Link className="btn btn-warning" to={`/edit/${user.id}`}>
               Edit
             </Link>
-            <Button className="btn btn-danger ms-2">Delete</Button>
+            <Button
+              onClick={() => removeUser(user.id)}
+              className="btn btn-danger ms-2"
+            >
+              Delete
+            </Button>
           </div>
         </ListGroupItem>
       ))}
